@@ -18,10 +18,8 @@ friendship_edges = [
 social_network_graph.add_nodes_from(user_nodes)
 social_network_graph.add_edges_from(friendship_edges)
 
-# Перетворення графу у словник
 graph_dict = nx.to_dict_of_lists(social_network_graph)
 
-# Ітеративний DFS
 def dfs_iterative(graph, start_vertex):
     visited = set()
     stack = [start_vertex]
@@ -34,7 +32,6 @@ def dfs_iterative(graph, start_vertex):
             stack.extend(reversed(graph[vertex]))
     return dfs_result
 
-# Ітеративний BFS
 def bfs_iterative(graph, start):
     visited = set()
     queue = deque([start])
